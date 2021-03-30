@@ -1,3 +1,4 @@
+FROM openjdk:13-oracle
 VOLUME /tmp
 EXPOSE 8000
 RUN mkdir -p /app/
