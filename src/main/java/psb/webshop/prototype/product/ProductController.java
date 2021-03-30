@@ -12,9 +12,12 @@ import java.util.List;
 @RestController
 public class ProductController {
 
+    public ProductService service;
+
     @RequestMapping("/products")
     public List<Product> getAllProducts() {
-        return Arrays.asList(
+        return service.getproducts();
+        /*return Arrays.asList(
                 new Product(
                         "1",
                         "Ducky USB",
@@ -39,6 +42,6 @@ public class ProductController {
                         "https://i.imgur.com/bEwVYmD.jpg",
                         125
                 )
-        );
+        );*/
     }
 }
