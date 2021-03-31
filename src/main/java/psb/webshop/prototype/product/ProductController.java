@@ -8,7 +8,7 @@ import psb.webshop.prototype.Service.ProductService;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "http://frontend-ucllteam11.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/", allowedHeaders = "*")
 @RestController
 public class ProductController {
 
