@@ -1,21 +1,21 @@
 package psb.webshop.prototype.product;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.oauth2.jwt.Jwt;
-import org.springframework.web.bind.annotation.*;
-import psb.webshop.prototype.Service.ProductService;
-
 import java.util.List;
 
-@CrossOrigin(origins = "http://frontend-ucllteam11.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/", allowedHeaders = "*")
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.oauth2.jwt.Jwt;
+import psb.webshop.prototype.Service.ProductService;
+
+@CrossOrigin(origins = "http://frontend-ucllteam11.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/", allowCredentials = "true")
 @RestController
 public class ProductController {
 
     @Autowired
     private ProductService service;
 
-    @GetMapping("/products")
+    @RequestMapping("/products")
     public List<Product> getAllProducts() {
         return (List<Product>) service.getAll();
     }
